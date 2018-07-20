@@ -23,9 +23,23 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/assets/lib/font-awesome/css/font-awesome.min.css",
+              "src/assets/lib/animate/animate.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+              "src/assets/lib/easing/easing.min.js",
+              "src/assets/lib/wow/wow.min.js",              
+              "src/assets/lib/waypoints/waypoints.min.js",
+              "src/assets/lib/counterup/counterup.min.js",
+              "src/assets/lib/superfish/hoverIntent.js",
+              "src/assets/lib/superfish/superfish.min.js",
+              "src/assets/lib/contactform/contactform.js",
+              "src/assets/lib/main.js"
+            ]
           },
           "configurations": {
             "production": {
