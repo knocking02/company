@@ -7,13 +7,13 @@ import { ActionSectionComponent } from './action-section/action-section.componen
 import { PortfolioSectionComponent } from './portfolio-section/portfolio-section.component';
 import { TeamSectionComponent } from './team-section/team-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
-import { HomeComponent } from './home/home.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [HeroSectionComponent, FactSectionComponent, ServiceSectionComponent, ActionSectionComponent, PortfolioSectionComponent, TeamSectionComponent, ContactSectionComponent, HomeComponent, AboutSectionComponent]
+  declarations: [HeroSectionComponent, FactSectionComponent, ServiceSectionComponent, ActionSectionComponent, PortfolioSectionComponent, TeamSectionComponent, ContactSectionComponent, AboutSectionComponent, HomeComponent]
 })
 export class HomeModule { }
