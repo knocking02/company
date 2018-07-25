@@ -2,13 +2,18 @@ jQuery(document).ready(function( $ ) {
 
   // Header fixed and Back to top button
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-      $('#header').addClass('header-fixed');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-      $('#header').removeClass('header-fixed');
+    if($('.community').length > 0) {
+        $('#header').addClass('header-fixed');
+    }else {
+      if ($(this).scrollTop() > 100) {
+        $('.back-to-top').fadeIn('slow');
+        $('#header').addClass('header-fixed');
+      } else {
+        $('.back-to-top').fadeOut('slow');
+        $('#header').removeClass('header-fixed');
+      }
     }
+
   });
   $('.back-to-top').click(function(){
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');

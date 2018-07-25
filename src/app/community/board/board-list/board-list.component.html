@@ -1,12 +1,66 @@
-<!--div class="container wow fadeIn">
-  <div class="section-header">
-    <h3 class="section-title">Q&A</h3>
-    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-  </div>
-  <div class="row">
+<mat-card>
+  <mat-card-title>
+    글목록
+  </mat-card-title>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-form-field>
+          <mat-select placeholder="검색">
+            <mat-option *ngFor="let items of searchItems" [value]="items.value">
+              {{items.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="검색어 입력" value="">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-1">
+        <button mat-mini-fab>검색</button>
+      </div>
+      <div class="col-sm-5"></div>
+    </div>
 
-  </div>
-</div -->
-<div>
-  board List
-</div>
+    <mat-table class="list-table-style" #table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="num">
+        <mat-header-cell *matHeaderCellDef> 번호 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.num}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> 제목 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef> 작성자 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.userName}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="regDate">
+        <mat-header-cell *matHeaderCellDef> 등록일 </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.regDate}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row class="list-header-style"
+                      *matHeaderRowDef="displayedColumns">
+      </mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowSelect(row)"></mat-row>
+    </mat-table>
+
+    <mat-paginator #paginator
+                   [pageSize]="5"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons>
+    </mat-paginator>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button  mat-flat-button (click)="writeForm()">WRITE</button>
+  </mat-card-actions>
+
+</mat-card>

@@ -4,8 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CommunityMainComponent } from '../community-main/community-main.component';
-import { BoardListComponent } from '../board/board-list/board-list.component';
-import { BoardViewComponent } from '../board/board-view/board-view.component';
+import { BoardModule } from '../board/board.module';
 
 const communityRoutes: Routes = [
   {
@@ -13,13 +12,15 @@ const communityRoutes: Routes = [
     component: CommunityMainComponent,
     children: [
       {
-        path: 'list',
-        component: BoardListComponent
+        path: 'board',
+        redirectTo: '/community/board',
+        pathMatch: 'full'
       },
       {
-        path: 'view',
-        component: BoardViewComponent
+        path: 'board',
+        loadChildren: '../board/board.module#BoardModule'
       }
+
    ]
   }
 ];
